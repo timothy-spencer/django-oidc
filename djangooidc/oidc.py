@@ -13,7 +13,8 @@ from oic import oic, rndstr
 from oic.exception import MissingAttribute
 from oic.oauth2 import ErrorResponse, MissingEndpoint, ResponseError
 from oic.oic import (AuthorizationRequest, AuthorizationResponse,
-                     ProviderConfigurationResponse, RegistrationResponse)
+                     RegistrationResponse)
+from oic.oic.message import ProviderConfigurationResponse
 from oic.utils.authn.client import CLIENT_AUTHN_METHOD
 from oic.utils import keyio
 

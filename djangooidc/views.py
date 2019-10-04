@@ -13,8 +13,8 @@ from django.conf import settings
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.views import login as auth_login_view
-from django.contrib.auth.views import logout as auth_logout_view
+from django.contrib.auth import login as auth_login_view
+from django.contrib.auth import logout as auth_logout_view
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import redirect, render_to_response, resolve_url
 from djangooidc.oidc import OIDCClients, OIDCError
