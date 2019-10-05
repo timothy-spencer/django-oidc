@@ -36,8 +36,7 @@ class Client(oic.Client):
     def __init__(self, client_id=None, ca_certs=None,
                  client_prefs=None, client_authn_method=None, keyjar=None,
                  verify_ssl=True, behaviour=None):
-        oic.Client.__init__(self, client_id, ca_certs, client_prefs,
-                            client_authn_method, keyjar, verify_ssl)
+        oic.Client.__init__(self, client_id=client_id, client_authn_method=client_authn_method, keyjar=keyjar, verify_ssl=verify_ssl, config=client_prefs)
         if behaviour:
             self.behaviour = behaviour
         else:
