@@ -44,8 +44,8 @@ class Client(oic.Client):
 
     def create_authn_request(self, session,  # *, - let's not use this fancy py3 thing for compatibility
                              acr_value=None, extra_args=None):
-        session["state"] = rndstr()
-        session["nonce"] = rndstr()
+        session["state"] = rndstr(size=32)
+        session["nonce"] = rndstr(size=32)
         request_args = {
             "response_type": self.behaviour["response_type"],
             "scope": self.behaviour["scope"],
