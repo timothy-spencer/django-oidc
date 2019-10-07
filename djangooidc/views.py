@@ -89,7 +89,10 @@ def openid(request, op_name=None):
     # authentication request
     if client:
         try:
-            return client.create_authn_request(request.session)
+            acrvalue = None
+            if 'acr_value' in settings.OIDC_PROVIDERS[op_name]['client_registration']:
+                acrvalue = settings.OIDC_PROVIDERS[op_name]['client_registration']['acr_value']
+            return client.create_authn_request(request.session, acr_value=acrvalue)
         except Exception as e:
             return view_error_handler(request, {"error": e})
 
